@@ -32,10 +32,12 @@ export default function ProductView () {
         console.log(price)
     })
 
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    // @ts-ignore
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-      
+    // Bootstrap Tooltip Enabler
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        // @ts-ignore
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    //
+    
     const soldOut = <h2 className='fw-bolder'>Sold Out</h2>
     const priceSec = <div className="d-flex align-items-center gap-3">
         <h2 className="fw-bolder m-0"><i className="bi bi-currency-dollar"></i>{data.price}</h2>
