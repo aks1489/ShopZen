@@ -1,0 +1,49 @@
+.container {
+    margin-bottom: 4rem;
+}
+
+.side_img_wrapper {
+    height: 16vh;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+.side_img {
+    flex: 0 0 13vh;
+}
+
+.product_img {
+    max-width: 100%;
+    height: 20rem;
+    object-fit: contain;
+}
+
+.list_img {
+    max-width: 100%;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.rating_text {
+    font-size: 0.75rem;
+}
+
+.price_text {
+    font-size: 1.20rem;
+}
+
+.price_text_discount {
+    font-size: 1rem;
+}
+
+.tooltip_button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.tooltip {
+    font-size: 5px;
+}

@@ -1,0 +1,16 @@
+.main_tab {
+    height: 80vh;
+}
+
+.form_text {
+    font-size: 0.9rem;
+}
+
+.card_shadow {
+    box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.23);
+                -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+}
+
+.signup_card {
+    margin-bottom: 5rem;
+}
