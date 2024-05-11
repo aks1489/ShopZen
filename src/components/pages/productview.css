@@ -47,3 +47,24 @@
 .tooltip {
     font-size: 5px;
 }
+
+
+.nav-pills .custom_pill .nav-link:not(.active) {
+    background-color: #cfe2ff;
+    color: rgb(44, 44, 44);
+}
+
+.nav-pills .custom_pill .nav-link {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.brand > p {
+    color: #8794aa;
+}
+
+.brand_name > h5 > span {
+    background-color: #cfe2ff;
+    color: rgb(40 114 169);
+    cursor: pointer;
+}
