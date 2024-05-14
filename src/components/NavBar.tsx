@@ -3,7 +3,7 @@ import SideBar from './nav_ele/NavSideBar'
 
 export default function NavBar() {
     return (
-        <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar sticky-top shadow navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid flex-xxl-row flex-xl-row flex-lg-row flex-md-row-reverse flex-row-reverse">
                 <button type="button" className="btn btn-primary position-relative d-lg-none">
                         <i className="bi bi-bag-dash"></i>
