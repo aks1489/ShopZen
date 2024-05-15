@@ -1,7 +1,7 @@
 import './productview.css'
 import { data } from './data'
 import { useEffect, useState } from 'react'
-import { IEventNumber, INumber } from '../Interface'
+import { IEventNumber, INumber, IPinCode } from '../Interface'
 
 export default function ProductView () {
     const [proImg, setProImg] = useState(data.thumbnail)
@@ -10,21 +10,30 @@ export default function ProductView () {
     const [discountAmount, setDiscountAmount] = useState<INumber>(0);
     const [price , setPrice] = useState<INumber>(data.price);
 
-    const [pinCode, setPinCode] = useState<INumber>(0)
+    const [pinCode, setPinCode] = useState<IPinCode>({
+        value : '',
+        status : false
+    });
 
     function handleClick (img : string) {
         setProImg(img)
     }
 
-    // function handelNumberInput(e: React.KeyboardEvent<HTMLInputElement>) {
-    //     var key = e.key;
-    //     if(key < '0' && key > '9') {
-    //         e.preventDefault();
-    //     }
-    // }
-
-    function handlePinChange (e : IEventNumber) {
-        setPinCode(Number(e.target.value))
+    function handlePinChange(e: IEventNumber) {
+        const isValidNumber = /^\d+$/; // simplified regex to match only digits
+        const inputValue = e.target.value.trim();
+    
+        if (inputValue === '' || isValidNumber.test(inputValue)) {
+            setPinCode((prvData) => ({
+                ...prvData,
+                value : e.target.value
+            })); 
+        } else {
+            setPinCode((prvData) => ({
+                ...prvData,
+                status: true
+            }))
+        }
     }
 
     console.log(pinCode)
@@ -83,15 +92,34 @@ export default function ProductView () {
                     <div className="col-12">
                         { data.stock >= 1 ? priceSec : soldOut }
                     </div>
-                    {/* <div className="col-12 d-flex flex-cloumn gap-2">
+                    <div className="col-12 d-flex flex-cloumn gap-2">
                         <div className="col-4">
-                            <input type="text" className="form-control col-8 pin_check" inputMode='numeric' maxLength={6} placeholder="Enter Pin Code" aria-label="Pin Check" aria-describedby="button-addon2" name="check_pin" onChange={handlePinChange} onKeyPress={handelNumberInput} />
+                            <input type="text" className="form-control col-8 pin_check" inputMode='numeric' maxLength={6} placeholder="Enter Pin Code" aria-label="Pin Check" aria-describedby="button-addon2" name="check_pin" value={pinCode.value}  onChange={handlePinChange} disabled ={pinCode.status}/>
                         </div>
                             <button className="btn btn-outline-secondary col-2" type="button" id="button-addon2"><i className="bi bi-geo-alt-fill"></i> Check</button>
                         <div className='col-auto d-flex align-items-center'>
                             <p className='m-0'>Deliverable</p>
                         </div>
-                    </div> */}
+                    </div>
+                    {
+                        pinCode.status && (
+                            <div className="col-12">
+                                <div className="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                                    <strong><i className="bi bi-x-circle-fill"></i> Please Enter Valid Pin Code</strong> Close this alert and try again.
+                                    <button 
+                                        type="button" 
+                                        className="btn-close" 
+                                        data-bs-dismiss="alert" 
+                                        aria-label="Close"
+                                            onClick={() => setPinCode(() => ({
+                                                value: '',
+                                                status: false
+                                            }))}
+                                        ></button>
+                                </div>
+                            </div>
+                        )
+                    }
                     <div className="col-12 d-flex gap-3 justify-content-between justify-content-md-start">
                         <button type="button" className="btn btn-success fs-5 fw-medium"><i className="bi bi-truck"></i> BUY NOW</button>
                         <button type="button" className="btn btn-primary fs-5 fw-medium"><i className="bi bi-bag-plus"></i> ADD TO CART</button>
@@ -144,6 +172,7 @@ export default function ProductView () {
             <div className="col-12">
 
             </div>
+           
         </div>
     )
 }
