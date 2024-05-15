@@ -10,5 +10,6 @@ export type IBoolean = boolean
 
 export interface IPinCode {
     value : string,
+    delivery : "yes" | "no" | "notSet" ,
     status : boolean
 }
