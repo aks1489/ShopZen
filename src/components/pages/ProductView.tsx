@@ -12,6 +12,7 @@ export default function ProductView () {
 
     const [pinCode, setPinCode] = useState<IPinCode>({
         value : '',
+        delivery : 'notSet',
         status : false
     });
 
@@ -27,11 +28,31 @@ export default function ProductView () {
             setPinCode((prvData) => ({
                 ...prvData,
                 value : e.target.value
-            })); 
+            }));
         } else {
             setPinCode((prvData) => ({
                 ...prvData,
+                delivery : 'notSet',
                 status: true
+            }))
+        }
+    }
+
+    function handleDeliveryResult() {
+        if(pinCode.value === '123456') {
+            setPinCode((prvData) => ({
+                ...prvData,
+                delivery: 'yes'
+            }))
+        } else if(pinCode.value === '') {
+            setPinCode((prvData) => ({
+                ...prvData,
+                delivery: 'notSet'
+            }))
+        } else {
+            setPinCode((prvData) => ({
+                ...prvData,
+                delivery: 'no'
             }))
         }
     }
@@ -65,6 +86,18 @@ export default function ProductView () {
         <div className="price_text_discount text-decoration-line-through fw-normal text-secondary ">${price.toFixed(2)}</div>
         <div className="price_text text-success fw-medium">{data.discountPercentage}% off</div>
     </div>
+
+    const deliveryInfo = () => {
+        if(pinCode.delivery === 'notSet') {
+            return ''
+        } else if (pinCode.delivery === 'yes') {
+            return <p className='m-0'>Deliverable</p>
+        } else if (pinCode.delivery === 'no') {
+            return <p className='m-0'>Not Deliverable</p>
+        } else {
+            console.error('Erron in code');
+        }
+    }
     return(
         <div className="container mt-3 container_shadow rounded ">
             <div className="row">
@@ -96,9 +129,9 @@ export default function ProductView () {
                         <div className="col-4">
                             <input type="text" className="form-control col-8 pin_check" inputMode='numeric' maxLength={6} placeholder="Enter Pin Code" aria-label="Pin Check" aria-describedby="button-addon2" name="check_pin" value={pinCode.value}  onChange={handlePinChange} disabled ={pinCode.status}/>
                         </div>
-                            <button className="btn btn-outline-secondary col-2" type="button" id="button-addon2"><i className="bi bi-geo-alt-fill"></i> Check</button>
+                            <button className="btn btn-outline-secondary col-2" type="button" id="button-addon2" onClick={handleDeliveryResult}><i className="bi bi-geo-alt-fill"></i> Check</button>
                         <div className='col-auto d-flex align-items-center'>
-                            <p className='m-0'>Deliverable</p>
+                            {deliveryInfo()}
                         </div>
                     </div>
                     {
@@ -111,7 +144,8 @@ export default function ProductView () {
                                         className="btn-close" 
                                         data-bs-dismiss="alert" 
                                         aria-label="Close"
-                                            onClick={() => setPinCode(() => ({
+                                            onClick={() => setPinCode((prvData) => ({
+                                                ...prvData,
                                                 value: '',
                                                 status: false
                                             }))}
@@ -169,8 +203,16 @@ export default function ProductView () {
                 </div>
             </div>
             <hr />
-            <div className="col-12">
-
+            <div className="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                <div id="liveToast" className={`toast`} role="alert" aria-live="assertive" aria-atomic="true"> {/* toast condition have to be add hare */}
+                    <div className="toast-header">
+                        {/* <img src="..." className="rounded me-2" alt="..." /> */}
+                        <strong className="me-auto">Information Alert</strong>
+                        {/* <small>11 mins ago</small> */}
+                        <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div className="toast-body">Pin code checking is for demo perpose only. Enter <strong>123456</strong> in pin code checking input field to try pin code checking function</div>
+                </div>
             </div>
            
         </div>
