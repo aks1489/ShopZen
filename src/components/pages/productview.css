@@ -88,6 +88,10 @@
     cursor: pointer;
 }
 
+.buy_card_text {
+    font-size: 1.20rem;
+}
+
 .highlights {
     max-height: 6rem;
     overflow-y: auto;
@@ -123,4 +127,18 @@
 .pin_check::-webkit-inner-spin-button,.pin_check::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.deliverable_text {
+    color: #198754;
+    font-size: 0.90rem;
+}
+
+.not_deliverable_text {
+    color: #dc3545;
+    font-size: 0.90rem;
+}
+
+.delivery_checking_button {
+    font-size: 0.90rem;
 }
