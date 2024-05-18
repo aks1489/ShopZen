@@ -1,7 +1,7 @@
 import './productview.css'
 import { data } from './data'
 import { useEffect, useState } from 'react'
-import { IEventNumber, INumber, IPinCode } from '../Interface'
+import { IEvent, IEventNumber, INumber, IPinCode } from '../Interface'
 
 export default function ProductView () {
     const [proImg, setProImg] = useState(data.thumbnail)
@@ -13,7 +13,8 @@ export default function ProductView () {
     const [pinCode, setPinCode] = useState<IPinCode>({
         value : '',
         delivery : 'notSet',
-        status : false
+        status : false,
+        btn_status : true
     });
 
     function handleClick (img : string) {
@@ -38,21 +39,33 @@ export default function ProductView () {
         }
     }
 
-    function handleDeliveryResult() {
-        if(pinCode.value === '123456') {
+    function handleDeliveryResult(e : IEvent) {
+        e.preventDefault();
+
+        if(pinCode.btn_status === false) {
             setPinCode((prvData) => ({
                 ...prvData,
-                delivery: 'yes'
+                btn_status: true,
+                delivery: 'notSet',
+                value: ''
+            }))
+        } else if(pinCode.value === '123456') {
+            setPinCode((prvData) => ({
+                ...prvData,
+                delivery: 'yes',
+                btn_status: false
             }))
         } else if(pinCode.value === '') {
             setPinCode((prvData) => ({
                 ...prvData,
-                delivery: 'notSet'
+                delivery: 'notSet',
+                btn_status: true
             }))
         } else {
             setPinCode((prvData) => ({
                 ...prvData,
-                delivery: 'no'
+                delivery: 'no',
+                btn_status: false
             }))
         }
     }
@@ -91,9 +104,9 @@ export default function ProductView () {
         if(pinCode.delivery === 'notSet') {
             return ''
         } else if (pinCode.delivery === 'yes') {
-            return <p className='m-0'>Deliverable</p>
+            return <p className='m-0 deliverable_text fw-medium'><i className="bi bi-check2-circle"></i> Deliverable in {pinCode.value}</p>
         } else if (pinCode.delivery === 'no') {
-            return <p className='m-0'>Not Deliverable</p>
+            return <p className='m-0 not_deliverable_text fw-medium'><i className="bi bi-x-circle"></i> Not Deliverable in {pinCode.value}</p>
         } else {
             console.error('Erron in code');
         }
@@ -125,14 +138,18 @@ export default function ProductView () {
                     <div className="col-12">
                         { data.stock >= 1 ? priceSec : soldOut }
                     </div>
-                    <div className="col-12 d-flex flex-cloumn gap-2">
-                        <div className="col-4">
-                            <input type="text" className="form-control col-8 pin_check" inputMode='numeric' maxLength={6} placeholder="Enter Pin Code" aria-label="Pin Check" aria-describedby="button-addon2" name="check_pin" value={pinCode.value}  onChange={handlePinChange} disabled ={pinCode.status}/>
-                        </div>
-                            <button className="btn btn-outline-secondary col-2" type="button" id="button-addon2" onClick={handleDeliveryResult}><i className="bi bi-geo-alt-fill"></i> Check</button>
-                        <div className='col-auto d-flex align-items-center'>
-                            {deliveryInfo()}
-                        </div>
+                    <div className="col-12">
+                        <form className="row">
+                            <div className="col-12 col-xl-6 d-flex flex-cloumn gap-2">
+                                <div className="col-8">
+                                    <input type="text" className="form-control col-8 pin_check" inputMode='numeric' maxLength={6} placeholder="Enter Pin Code" aria-label="Pin Check" aria-describedby="button-addon2" name="check_pin" value={pinCode.value}  onChange={handlePinChange} disabled ={pinCode.status || !pinCode.btn_status}/>
+                                </div>
+                                <button className="btn btn-outline-secondary col-4 delivery_checking_button fw-semibold" type="submit" id="button-addon2" onClick={handleDeliveryResult}>{!pinCode.btn_status ? <><i className="bi bi-eraser"></i> Clear</> : <><i className="bi bi-geo-alt-fill"></i> Check</> }</button>
+                            </div>
+                            <div className='col-12 col-xl-6 mt-2 mt-lg-0 d-flex align-items-center'>
+                                {deliveryInfo()}
+                            </div>
+                        </form>
                     </div>
                     {
                         pinCode.status && (
@@ -155,8 +172,8 @@ export default function ProductView () {
                         )
                     }
                     <div className="col-12 d-flex gap-3 justify-content-between justify-content-md-start">
-                        <button type="button" className="btn btn-success fs-5 fw-medium"><i className="bi bi-truck"></i> BUY NOW</button>
-                        <button type="button" className="btn btn-primary fs-5 fw-medium"><i className="bi bi-bag-plus"></i> ADD TO CART</button>
+                        <button type="button" className="btn btn-success buy_card_text fw-medium"><i className="bi bi-truck"></i> BUY NOW</button>
+                        <button type="button" className="btn btn-primary buy_card_text fw-medium"><i className="bi bi-bag-plus"></i> ADD TO CART</button>
                     </div>
                     <div className="col-12 d-flex">
                         <div className="titels col-2">
