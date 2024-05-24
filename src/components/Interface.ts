@@ -16,3 +16,7 @@ export interface IPinCode {
 }
 
 export type IEvent = SyntheticEvent
+
+export interface ICardProp {
+    cardSize : 'big' | 'small' ;
+} 
