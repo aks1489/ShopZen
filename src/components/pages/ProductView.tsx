@@ -2,6 +2,7 @@ import './productview.css'
 import { data } from './data'
 import { useEffect, useState } from 'react'
 import { IEvent, IEventNumber, INumber, IPinCode } from '../Interface'
+import { Cards } from '../ele/Products.Cards'
 
 export default function ProductView () {
     const [proImg, setProImg] = useState(data.thumbnail)
@@ -236,6 +237,7 @@ export default function ProductView () {
                 </div>
             </div>
             <hr />
+            <Cards cardSize={'small'} />
             {
                 pinCode.delivery === 'no' ? defaultPinMessage() : null
             }           
