@@ -1,17 +1,17 @@
 import { useState } from "react";
 import GridView from "./card/GridView";
 import ListView from "./card/ListView";
-import { ITableView } from "../Interface";
+import { ICardProp, ITableView } from "../Interface";
 import './productcard.css'
 
 // import ListView from './card/ListView'
-export function Cards() {
+export function Cards(props: ICardProp) {
     const [tableView, setTableView] = useState<ITableView>("grid")
 
     const renderView = () => {
         {   
             if(tableView === "grid") {
-                return <GridView />
+                return <GridView cardSize={props.cardSize}/>
             } else {
                 return <ListView />
             }
