@@ -3,6 +3,16 @@
     font-size: clamp(0.8rem, 0.5vh, 0.5rem);
 }
 
+.card_text_small {
+    font-weight: 500;
+    font-size: clamp(0.7rem, 0.5vh, 0.5rem);
+    color: rgb(32, 49, 75);
+}
+
+.card_text_small:hover {
+    color: rgb(25, 135, 84);
+}
+
 .product_button {
     font-weight: 600;
     font-size: clamp(0.7rem, 1.4vh, 2rem);

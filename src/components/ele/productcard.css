@@ -1,3 +1,21 @@
 .product_container {
     margin-bottom: 4rem;
 }
+
+.similar-prodcts-container {
+    overflow: auto;
+}
+
+.similar-prodcts-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.similar-prodcts-container::-webkit-scrollbar-track {
+    background: #e7e8e9;
+}
+
+.similar-prodcts-container::-webkit-scrollbar-thumb {
+    background-color: #a3c1ee;
+    border-radius: 20px;
+    border: 2px solid #e0e1e2;
+}
