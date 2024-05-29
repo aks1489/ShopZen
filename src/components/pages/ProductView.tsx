@@ -70,8 +70,7 @@ export default function ProductView () {
             }))
         }
     }
-
-    console.log(pinCode)
+    
     useEffect(() => {
         if(data.rating >= 3.50){
             setReviewBadge('text-bg-success')
@@ -236,7 +235,7 @@ export default function ProductView () {
                     </div>
                 </div>
             </div>
-            <hr />
+            <hr className='my-1'/>
             <Cards cardSize={'small'} />
             {
                 pinCode.delivery === 'no' ? defaultPinMessage() : null
