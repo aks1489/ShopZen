@@ -19,7 +19,7 @@ export function Cards(props: ICardProp) {
     }
 
     return (
-        <div className="container mt-2 d-flex flex-column mb-lg-0 product_container px-0">
+        <div className="container mt-2 d-flex flex-column mb-lg-0 product_container px-1">
             <div className={props.cardSize !== 'small' ? 'product_view d-flex flex-row justify-content-end' : 'd-none'}>
                 <div className="btn-group">
                     <a className={`btn btn-outline-secondary border-2 ${tableView === "list" ? "active" : '' }`} onClick={() => setTableView("list")} aria-current="page"><i className="bi bi-list-ul"></i></a>
@@ -29,7 +29,7 @@ export function Cards(props: ICardProp) {
             <div className="conainer d-flex flex-column mb-2">
                 {
                     props.cardSize !== 'small' ?
-                        <div className="row p-2 justify-content-center gap-2">
+                        <div className="row m-0 p-2 justify-content-center gap-2">
                             {renderView()}
                         </div>
                         :
