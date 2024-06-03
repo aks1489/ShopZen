@@ -33,7 +33,7 @@ export function Cards(props: ICardProp) {
                             {renderView()}
                         </div>
                         :
-                        <div className="p-2 d-flex gap-2 similar-prodcts-container">
+                        <div className="py-2 d-flex gap-2 similar-prodcts-container">
                             {renderView()}
                             {renderView()}
                             {renderView()}
