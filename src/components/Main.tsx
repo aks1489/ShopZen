@@ -8,9 +8,9 @@ export default function Main() {
     return(
         <>
             <NavBar />
-            {/* <Landing /> */}
+            <Landing />
             {/* <LoginSignUp /> */}
-            <ProductView />
+            {/* <ProductView /> */}
             <AddToCartModal />          {/*  modal for cart  */ }
         </>
     )
