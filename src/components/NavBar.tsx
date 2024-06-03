@@ -1,3 +1,4 @@
+import AddToCartModal from './nav_ele/AddToCartModal'
 import BottomBar from './nav_ele/BottomBar'
 import SideBar from './nav_ele/NavSideBar'
 
@@ -36,7 +37,7 @@ export default function NavBar() {
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </ul>
-                    <button type="button" className="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" className="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <i className="bi bi-bag-dash"></i>
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             1
@@ -45,23 +46,6 @@ export default function NavBar() {
                     </button>
                 </div>
                 <BottomBar />
-                <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div className="modal-body">
-                                ...
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </nav>
     )
