@@ -3,6 +3,7 @@ import GridView from "./card/GridView";
 import ListView from "./card/ListView";
 import { ICardProp, ITableView } from "../Interface";
 import './productcard.css'
+import { cartData } from "./cartData";
 
 // import ListView from './card/ListView'
 export function Cards(props: ICardProp) {
@@ -13,12 +14,21 @@ export function Cards(props: ICardProp) {
             if(props.cardSize === 'card') {
                 return <GridView cardSize={props.cardSize}/>
             } else if (props.cardSize === 'list') {
-                return <ListView data='hide' />
+                return (
+                    cartData.products.map((prodcts) => {
+                        return <ListView key={prodcts.id}  data='hide' cartData={prodcts} />
+                    })
+                )
+                    // <ListView data='hide' cartData={cartData} />
             } else if (props.cardSize === 'default') {
                 if(tableView !== 'list') {
                     return <GridView cardSize={props.cardSize} />
                 } else {
-                    return <ListView data='show' />
+                    return (
+                        <>
+                            {/* <ListView data='show' cartData={cartData} /> */}   {/* implement logic and structure*/}
+                        </>
+                    )
                 }
             }
         }
