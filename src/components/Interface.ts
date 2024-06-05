@@ -18,5 +18,9 @@ export interface IPinCode {
 export type IEvent = SyntheticEvent
 
 export interface ICardProp {
-    cardSize : 'big' | 'small' ;
-} 
+    cardSize : 'default' | 'card' | 'list';
+}
+
+export interface IListView {
+    data : 'show' | 'hide';
+}
