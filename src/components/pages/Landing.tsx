@@ -5,7 +5,7 @@ export default function Landing() {
     return (
         <>
             <Carousel />
-            <Cards cardSize="default" />
+            <Cards cardSize="default" />            /* cardSize = "default" | "card" | "list" */
         </>
     )
 }
