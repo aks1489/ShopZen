@@ -96,7 +96,7 @@ export default function ProductView () {
     const soldOut = <h2 className='fw-bolder'>Sold Out</h2>
     const priceSec = <div className="d-flex align-items-center gap-3">
         <h2 className="fw-bolder m-0"><i className="bi bi-currency-dollar"></i>{data.price}</h2>
-        <div className="price_text_discount text-decoration-line-through fw-normal text-secondary ">${price.toFixed(2)}</div>
+        <div className="price_text_discount text-decoration-line-through fw-normal text-secondary "><i className="bi bi-currency-dollar"></i>{price.toFixed(2)}</div>
         <div className="price_text text-success fw-medium">{data.discountPercentage}% off</div>
     </div>
 
