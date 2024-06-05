@@ -1,6 +1,7 @@
+import { IListView } from '../../Interface'
 import './product.list.view.css'
 
-export default function ListView () {
+export default function ListView (props : IListView) {
     return (
         <div className="card px-0 col-12">
             <div className="row w-100">
@@ -17,10 +18,10 @@ export default function ListView () {
                         <div className="price_text_discount text-decoration-line-through fw-normal text-secondary ">$2000</div>
                         <div className="price_text text-success fw-medium">18 % off</div>
                     </div>
-                    <div className="product_button d-flex flex-row gap-2 mb-1 justify-content-evenly justify-content-sm-start px-2">
+                   { props.data === 'show' && <div className="product_button d-flex flex-row gap-2 mb-1 justify-content-evenly justify-content-sm-start px-2">
                         <button type="button" className="btn btn-success product_button">{"Buy Now"} <i className="bi bi-bag product_button"></i></button>
                         <button type="button" className="btn btn-warning product_button">{"Add to Cart"} <i className="bi bi-cart-plus product_button"></i></button>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

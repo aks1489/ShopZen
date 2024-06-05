@@ -236,7 +236,7 @@ export default function ProductView () {
                 </div>
             </div>
             <hr className='my-1'/>
-            <Cards cardSize={'small'} />
+            <Cards cardSize={'card'} />
             {
                 pinCode.delivery === 'no' ? defaultPinMessage() : null
             }           

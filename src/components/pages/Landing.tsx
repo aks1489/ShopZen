@@ -5,7 +5,7 @@ export default function Landing() {
     return (
         <>
             <Carousel />
-            <Cards cardSize="big" />
+            <Cards cardSize="default" />
         </>
     )
 }
