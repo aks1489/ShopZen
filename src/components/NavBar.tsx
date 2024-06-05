@@ -1,4 +1,3 @@
-import AddToCartModal from './nav_ele/AddToCartModal'
 import BottomBar from './nav_ele/BottomBar'
 import SideBar from './nav_ele/NavSideBar'
 
