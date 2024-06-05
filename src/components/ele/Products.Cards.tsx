@@ -25,9 +25,9 @@ export function Cards(props: ICardProp) {
                     return <GridView cardSize={props.cardSize} />
                 } else {
                     return (
-                        <>
-                            {/* <ListView data='show' cartData={cartData} /> */}   {/* implement logic and structure*/}
-                        </>
+                        cartData.products.map((prodcts) => {
+                            return <ListView key={prodcts.id}  data='hide' cartData={prodcts} />
+                        })
                     )
                 }
             }
