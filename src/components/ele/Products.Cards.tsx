@@ -10,25 +10,31 @@ export function Cards(props: ICardProp) {
 
     const renderView = () => {
         {   
-            if(tableView === "grid" || props.cardSize === 'small') {
+            if(props.cardSize === 'card') {
                 return <GridView cardSize={props.cardSize}/>
-            } else {
-                return <ListView />
+            } else if (props.cardSize === 'list') {
+                return <ListView data='hide' />
+            } else if (props.cardSize === 'default') {
+                if(tableView !== 'list') {
+                    return <GridView cardSize={props.cardSize} />
+                } else {
+                    return <ListView data='show' />
+                }
             }
         }
     }
 
     return (
         <div className="container mt-2 d-flex flex-column mb-lg-0 product_container px-1">
-            <div className={props.cardSize !== 'small' ? 'product_view d-flex flex-row justify-content-end' : 'd-none'}>
+            {props.cardSize === 'default' && <div className='product_view d-flex flex-row justify-content-end'>
                 <div className="btn-group">
-                    <a className={`btn btn-outline-secondary border-2 ${tableView === "list" ? "active" : '' }`} onClick={() => setTableView("list")} aria-current="page"><i className="bi bi-list-ul"></i></a>
-                    <a className={`btn btn-outline-secondary border-2 ${tableView === "grid" ? "active" : '' }`} onClick={() => setTableView("grid")}><i className="bi bi-grid-3x3"></i></a>
+                    <a className={`btn btn-outline-secondary border-2 ${tableView === "list" && "active" }`} onClick={() => setTableView("list")} aria-current="page"><i className="bi bi-list-ul"></i></a>
+                    <a className={`btn btn-outline-secondary border-2 ${tableView === "grid" && "active" }`} onClick={() => setTableView("grid")}><i className="bi bi-grid-3x3"></i></a>
                 </div>
-            </div>
+            </div>}
             <div className="conainer d-flex flex-column mb-2">
                 {
-                    props.cardSize !== 'small' ?
+                    props.cardSize !== 'card' ?
                         <div className="row m-0 p-2 justify-content-center gap-2">
                             {renderView()}
                         </div>
