@@ -16,17 +16,16 @@ export function Cards(props: ICardProp) {
             } else if (props.cardSize === 'list') {
                 return (
                     cartData.products.map((prodcts) => {
-                        return <ListView key={prodcts.id}  data='hide' cartData={prodcts} />
+                        return <ListView key={prodcts.id}  data='cart' cartData={prodcts} />
                     })
                 )
-                    // <ListView data='hide' cartData={cartData} />
             } else if (props.cardSize === 'default') {
                 if(tableView !== 'list') {
                     return <GridView cardSize={props.cardSize} />
                 } else {
                     return (
                         cartData.products.map((prodcts) => {
-                            return <ListView key={prodcts.id}  data='hide' cartData={prodcts} />
+                            return <ListView key={prodcts.id}  data='show' cartData={prodcts} />
                         })
                     )
                 }
@@ -64,7 +63,6 @@ export function Cards(props: ICardProp) {
                             {renderView()}
                             {renderView()}
                         </div>
-
                 }
             </div>
 
