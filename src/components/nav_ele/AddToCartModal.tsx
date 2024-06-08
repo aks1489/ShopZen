@@ -13,8 +13,8 @@ export default function AddToCartModal() {
                     <Cards cardSize="list" />
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Understood</button>
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"><i className="bi bi-x-circle"></i> Close</button>
+                    <button type="button" className="btn btn-primary">Place Order</button>
                 </div>
                 </div>
             </div>
