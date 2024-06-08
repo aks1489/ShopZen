@@ -61,5 +61,5 @@ export interface IListView {
             images: string[];
             thumbnail: string;
         },
-    data : 'show' | 'hide';
+    data : 'show' | 'hide' | 'cart';
 }
