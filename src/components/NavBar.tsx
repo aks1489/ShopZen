@@ -1,5 +1,6 @@
 import BottomBar from './nav_ele/BottomBar'
 import SideBar from './nav_ele/NavSideBar'
+import './navbar.css'
 
 export default function NavBar() {
     return (
@@ -13,7 +14,7 @@ export default function NavBar() {
                         </span>
                     </button>
                 <SideBar />
-                <a className="navbar-brand" href="#">ShopZen</a>
+                <a className="navbar-brand" href="#"><img src="/qshopzen.png" className='nav_logo' alt="" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
