@@ -1,6 +1,9 @@
 import { ChangeEvent, SyntheticEvent } from "react"
 
-export type ITableView = "grid" | "list"
+export interface ITableTools {
+    tableView: 'list' | 'grid',
+    tableOrder: 'ascending' | 'descending'
+}
 
 export type INumber = number
 
@@ -18,7 +21,7 @@ export interface IPinCode {
 export type IEvent = SyntheticEvent
 
 export interface ICardProp {
-    cardSize : 'default' | 'card' | 'list';
+    cardSize : 'default' | 'card' | 'list' | 'product';
 }
 
 export interface IListView {
