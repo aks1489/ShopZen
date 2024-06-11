@@ -29,6 +29,12 @@ export function Cards(props: ICardProp) {
                         })
                     )
                 }
+            } else if (props.cardSize === 'order') {
+                return (
+                    cartData.products.map((prodcts) => {
+                        return <ListView key={prodcts.id} data='order' cartData={prodcts} />
+                    })
+                )
             }
         }
     }
