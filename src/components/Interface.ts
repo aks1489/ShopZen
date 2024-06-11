@@ -21,7 +21,7 @@ export interface IPinCode {
 export type IEvent = SyntheticEvent
 
 export interface ICardProp {
-    cardSize : 'default' | 'card' | 'list' | 'product';
+    cardSize : 'default' | 'card' | 'list' | 'product' | 'order';
 }
 
 export interface IListView {
@@ -64,5 +64,5 @@ export interface IListView {
             images: string[];
             thumbnail: string;
         },
-    data : 'show' | 'hide' | 'cart';
+    data : 'show' | 'hide' | 'cart' | 'order';
 }
