@@ -16,7 +16,7 @@ export default function ListView (props : IListView) {
             return (
                 <div className="d-flex justify-content-between">
                     <div className="d-flex align-items-center gap-2">
-                        <h2 className="fw-bolder m-0"><i className="bi bi-currency-dollar"></i>{props.cartData.price}</h2>
+                        <h2 className="fw-bolder m-0 f_sizing"><i className="bi bi-currency-dollar"></i>{props.cartData.price}</h2>
                         <div className="price_text_discount text-decoration-line-through fw-normal text-secondary text-decoration-line-through"><i className="bi bi-currency-dollar"></i>{price.toFixed(2)}</div>
                         <div className="price_text text-success fw-medium">{props.cartData.discountPercentage} % off</div>
                     </div>
@@ -28,9 +28,20 @@ export default function ListView (props : IListView) {
         } else if (props.data === 'show') {
             return (
                 <div className="d-flex align-items-center gap-2">
-                    <h2 className="fw-bolder m-0"><i className="bi bi-currency-dollar"></i>{props.cartData.price}</h2>
+                    <h2 className="fw-bolder m-0 f_sizing"><i className="bi bi-currency-dollar"></i>{props.cartData.price}</h2>
                     <div className="price_text_discount text-decoration-line-through fw-normal text-secondary text-decoration-line-through"><i className="bi bi-currency-dollar"></i>{price.toFixed(2)}</div>
                     <div className="price_text text-success fw-medium">{props.cartData.discountPercentage} % off</div>
+                </div>
+            )
+        } else if (props.data === 'order') {
+            return (
+                <div className="d-flex justify-content-between align-items-center gap-2">
+                    <div className="status align-items-center d-flex align-items-baseline gap-1">
+                        <p className='p-0 m-0 lh-sm stats_text mb-md-1 fw-bolder'>Status: </p>
+                        <p className='m-0 badge text-bg-success'><i className="bi bi-check-circle-fill"></i> Recived</p>
+                    </div>
+                    {/* <h2 className="fw-bolder m-0 f_sizing"><i className="bi bi-currency-dollar"></i>{props.cartData.price}</h2> */}
+                    <button type="button" className="btn btn-danger order_cancle_button m-0"><i className="bi bi-x-circle"></i> Cancle</button>
                 </div>
             )
         }
@@ -44,8 +55,8 @@ export default function ListView (props : IListView) {
                 </div>
                 <div className="col-8 col-md-9 col-xl-10 ps-0 p-auto d-flex flex-column justify-content-around justify-content-sm-around">
                     <div className="d-flex flex-column product_data">
-                        <p className='p-0 m-0 lh-sm product_text mb-md-1'>{props.cartData.title}</p>
-                        <p className='product_description p-0 m-0 d-none mh-md-50 overflow-auto d-sm-block'>{props.cartData.description}</p>
+                        <p className='p-0 m-0 lh-sm product_text mb-md-1 fw-bolder'>{props.cartData.title}</p>
+                        <p className='product_description p-0 m-0 overflow-auto d-sm-block'>{props.cartData.description}</p>
                     </div>
                    {listData()}
                     {
