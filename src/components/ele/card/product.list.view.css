@@ -21,4 +21,19 @@
 .product_description {
     font-weight: 400;
     font-size: clamp(0.8rem, 1.5vh, 1.5rem);
+    max-height: 5vh;
+}
+
+.stats_text {
+    font-size: clamp(1.05rem, 1.8vh, 1rem);
+}
+
+.f_sizing {
+    font-size: calc(0.90rem + 0.9vw);
+}
+
+.order_cancle_button{
+    padding: 0.25rem;
+    font-size: clamp(0.7rem, 1.4vh, 2rem);
+    border-radius: 5px;
 }
