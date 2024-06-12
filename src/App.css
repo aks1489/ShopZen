@@ -1,0 +1,14 @@
+:root {
+    --gold : rgb(218,165,32);
+    --dark_fade : rgb(139 139 139);
+    --red_fade: rgb(248,215,218);
+    --red: rgb(220,53,69);
+}
+
+.text_color_dark_fade {
+   color: var(--dark_fade);
+}
+
+.saved_products_text {
+    color: var(--red);
+}
