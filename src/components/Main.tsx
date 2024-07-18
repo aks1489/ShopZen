@@ -13,9 +13,9 @@ export default function Main() {
             <NavBar />
             {/* <Landing /> */}
             {/* <LoginSignUp /> */}
-            {/* <ProductView /> */}
+            <ProductView />
             {/* <Products /> */}
-            <SavedProducts />
+            {/* <SavedProducts /> */}
             {/* <OrderdProducts /> */}
             <AddToCartModal />          {/*  modal for cart  */ }
         </>
