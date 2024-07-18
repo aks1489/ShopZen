@@ -108,7 +108,7 @@ export default function ProductView () {
         } else if (pinCode.delivery === 'no') {
             return <p className='m-0 not_deliverable_text fw-medium'><i className="bi bi-x-circle"></i> Not Deliverable in {pinCode.value}</p>
         } else {
-            console.error('Erron in code');
+            console.error('Error in code');
         }
     }
 
