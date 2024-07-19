@@ -19,7 +19,7 @@ export default function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-start">
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -32,18 +32,33 @@ export default function NavBar() {
                                 <li><a className="dropdown-item" href="#">Another action</a></li>
                             </ul>
                         </li>
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        <div className='d-flex w-100 justify-content-center'>
+                            <form className="d-flex container-fluid search" role="search">
+                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                <button className="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
                     </ul>
-                    <button type="button" className="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i className="bi bi-bag-dash"></i>
-                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            1
-                            <span className="visually-hidden">Items</span>
-                        </span>
-                    </button>
+                    <div className="d-flex">
+                        <button type="button" className="btn btn-outline-success position-relative">
+                            <i className="bi bi-person-badge"></i>
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                1
+                                <span className="visually-hidden">Items</span>
+                            </span>
+                        </button>
+                        <div className="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                            <div className="vr d-none d-lg-flex h-100 mx-lg-2 text-secondary"></div>
+                            <hr className="d-lg-none my-2 text-white-50" />
+                        </div>
+                        <button type="button" className="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <i className="bi bi-bag-dash"></i>
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                4
+                                <span className="visually-hidden">Items</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
                 <BottomBar />
             </div>
