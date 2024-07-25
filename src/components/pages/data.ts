@@ -1,62 +1,89 @@
-export const data = {
-  "id": 10,
-  "title": "Gucci Bloom Eau de",
-  "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
-  "category": "fragrances",
-  "price": 79.99,
-  "discountPercentage": 8.9,
-  "rating": 2.69,
-  "stock": 93,
+export const data =     {
+  "id": 121,
+  "title": "iPhone 5s",
+  "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+  "category": "smartphones",
+  "price": 199.99,
+  "discountPercentage": 11.85,
+  "rating": 3.92,
+  "stock": 65,
   "tags": [
-    "fragrances",
-    "perfumes"
+    "smartphones",
+    "apple"
   ],
-  "brand": "Gucci",
-  "sku": "FFKZ6HOF",
-  "weight": 10,
+  "brand": "Apple",
+  "sku": "AZ1L68SM",
+  "weight": 4,
   "dimensions": {
-    "width": 22.28,
-    "height": 17.81,
-    "depth": 27.18
+    "width": 8.49,
+    "height": 25.34,
+    "depth": 18.12
   },
-  "warrantyInformation": "No warranty",
-  "shippingInformation": "Ships in 2 weeks",
+  "warrantyInformation": "1 week warranty",
+  "shippingInformation": "Ships in 1 week",
   "availabilityStatus": "In Stock",
   "reviews": [
     {
+      "rating": 4,
+      "comment": "Highly impressed!",
+      "date": "2024-05-23T08:56:21.625Z",
+      "reviewerName": "Wyatt Perry",
+      "reviewerEmail": "wyatt.perry@x.dummyjson.com"
+    },
+    {
       "rating": 5,
-      "comment": "Great value for money!",
-      "date": "2024-05-23T08:56:21.620Z",
-      "reviewerName": "Aria Parker",
-      "reviewerEmail": "aria.parker@x.dummyjson.com"
+      "comment": "Awesome product!",
+      "date": "2024-05-23T08:56:21.625Z",
+      "reviewerName": "Olivia Anderson",
+      "reviewerEmail": "olivia.anderson@x.dummyjson.com"
     },
     {
       "rating": 4,
-      "comment": "Excellent quality!",
-      "date": "2024-05-23T08:56:21.620Z",
-      "reviewerName": "Natalie Harris",
-      "reviewerEmail": "natalie.harris@x.dummyjson.com"
-    },
-    {
-      "rating": 4,
-      "comment": "Fast shipping!",
-      "date": "2024-05-23T08:56:21.620Z",
-      "reviewerName": "Ava Harris",
-      "reviewerEmail": "ava.harris@x.dummyjson.com"
+      "comment": "Highly recommended!",
+      "date": "2024-05-23T08:56:21.625Z",
+      "reviewerName": "Mateo Nguyen",
+      "reviewerEmail": "mateo.nguyen@x.dummyjson.com"
     }
   ],
   "returnPolicy": "No return policy",
-  "minimumOrderQuantity": 10,
+  "minimumOrderQuantity": 2,
   "meta": {
-    "createdAt": "2024-05-23T08:56:21.620Z",
-    "updatedAt": "2024-05-23T08:56:21.620Z",
-    "barcode": "8232190382069",
+    "createdAt": "2024-05-23T08:56:21.625Z",
+    "updatedAt": "2024-05-23T08:56:21.625Z",
+    "barcode": "2903942810911",
     "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
   },
   "images": [
-    "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png",
-    "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/2.png",
-    "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/3.png"
+    "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/1.png",
+    "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/2.png",
+    "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/3.png"
   ],
-  "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png"
+  "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/thumbnail.png"
 }
+
+export const category = [
+  "beauty",
+  "fragrances",
+  "furniture",
+  "groceries",
+  "home-decoration",
+  "kitchen-accessories",
+  "laptops",
+  "mens-shirts",
+  "mens-shoes",
+  "mens-watches",
+  "mobile-accessories",
+  "motorcycle",
+  "skin-care",
+  "smartphones",
+  "sports-accessories",
+  "sunglasses",
+  "tablets",
+  "tops",
+  "vehicle",
+  "womens-bags",
+  "womens-dresses",
+  "womens-jewellery",
+  "womens-shoes",
+  "womens-watches"
+  ]
