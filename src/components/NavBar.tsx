@@ -1,8 +1,10 @@
 import BottomBar from './nav_ele/BottomBar'
 import SideBar from './nav_ele/NavSideBar'
 import './navbar.css'
+import { category } from './pages/data'
 
 export default function NavBar() {
+    console.log(category)
     return (
         <nav className="navbar sticky-top shadow navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid flex-xxl-row flex-xl-row flex-lg-row flex-md-row-reverse flex-row-reverse">
@@ -28,8 +30,14 @@ export default function NavBar() {
                                 Categories
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                {
+                                    category.map((cat) => {
+                                        return (
+                                            <li><a className="dropdown-item" href="#">{cat}</a></li>
+                                        )
+                                    })
+                                }
+                                {/* <li><a className="dropdown-item" href="#">Action</a></li> */}
                             </ul>
                         </li>
                         <div className='d-flex w-100 justify-content-center'>
