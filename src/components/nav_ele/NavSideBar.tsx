@@ -1,3 +1,6 @@
+import { category } from "../pages/data"
+import './navSide.css'
+
 export default function NavSideBar() {
     return (
         <div className="offcanvas offcanvas-start navbar-toggler" tabIndex={-1} id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -17,6 +20,29 @@ export default function NavSideBar() {
                 </form>
                 <hr className="p-0 my-2"/>
                 <p className="p-0 m-0">Categories</p>
+                {/* <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select Category</button>
+                    <ul className="dropdown-menu">
+                        <li><a className="dropdown-item" href="#">Action</a></li>
+                        {
+                            category.map( cat => {
+                                return (
+                                    <li><a className="dropdown-item" href="#">{cat}</a></li> 
+                                )
+                            })
+                        }
+                    </ul>
+                </div> */}
+
+                <div className="category_panel mt-2">
+                    {category.map(cat =>{
+                        return (
+                            <ul className="category_ul">
+                                <li><a className="category_item" href="#">{cat}</a></li>
+                            </ul>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

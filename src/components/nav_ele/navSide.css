@@ -1,0 +1,29 @@
+.category_panel {
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+
+    background-color: #00000006;
+}
+
+.category_ul {
+    margin: 0;
+}
+
+.category_ul > li::marker {
+    font-size: 15px;
+    color: orange;
+}
+
+.category_ul > li > a::first-letter {
+    text-transform: uppercase;
+}
+
+.category_item {
+    font-size: 2vh;
+}
