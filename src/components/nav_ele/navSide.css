@@ -20,10 +20,11 @@
     color: orange;
 }
 
-.category_ul > li > a::first-letter {
-    text-transform: uppercase;
-}
-
 .category_item {
     font-size: 2vh;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 3px;
+    font-weight: 300;
+    color: #252525;
 }
