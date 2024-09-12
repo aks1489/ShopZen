@@ -1,7 +1,7 @@
 import './productview.css'
 import { data } from './data'
 import { useEffect, useState } from 'react'
-import { IEvent, IEventNumber, INumber, IPinCode } from '../Interface'
+import { FetchedData, IEvent, IEventNumber, INumber, IPinCode } from '../Interface'
 import { Cards } from '../ele/Products.Cards'
 import axios from 'axios'
 
@@ -19,11 +19,11 @@ export default function ProductView () {
         btn_status : true
     });
 
-    const [fetchedData, setFetchedData] = useState()
+    const [fetchedData, setFetchedData] = useState<FetchedData>({products: []})
 
     useEffect(() =>{
         const fetched_Data = async () => {
-            const response: any = await axios.get("https://dummyjson.com/products")
+            const response: any = await axios.get("https://dummyjson.com/products?limit=100")
             .catch( error => {
                 console.error(error)
             })
