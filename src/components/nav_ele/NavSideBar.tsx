@@ -35,10 +35,10 @@ export default function NavSideBar() {
                 </div> */}
 
                 <div className="category_panel mt-2">
-                    {category.map(cat =>{
+                    {category.map((cat,index) =>{
                         return (
-                            <ul className="category_ul">
-                                <li><a className="category_item" href="#">{cat}</a></li>
+                            <ul key={index} className="category_ul">
+                                <li ><a className="category_item" href="#">{cat}</a></li>
                             </ul>
                         )
                     })}
