@@ -46,7 +46,7 @@ export default function ListView (props : IListView) {
             )
         }
     }
-    console.log(props)
+    // console.log(props)
     return (
         <div className="card px-0 col-12">
             <div className="row w-100">
