@@ -3,6 +3,7 @@ import { data } from './data'
 import { useEffect, useState } from 'react'
 import { IEvent, IEventNumber, INumber, IPinCode } from '../Interface'
 import { Cards } from '../ele/Products.Cards'
+import axios from 'axios'
 
 export default function ProductView () {
     const [proImg, setProImg] = useState(data.thumbnail)
@@ -17,6 +18,21 @@ export default function ProductView () {
         status : false,
         btn_status : true
     });
+
+    const [fetchedData, setFetchedData] = useState()
+
+    useEffect(() =>{
+        const fetched_Data = async () => {
+            const response: any = await axios.get("https://dummyjson.com/products")
+            .catch( error => {
+                console.error(error)
+            })
+            setFetchedData(response)
+        }
+        fetched_Data()
+    },[])
+
+    console.log(fetchedData)
 
     function handleClick (img : string) {
         setProImg(img)
